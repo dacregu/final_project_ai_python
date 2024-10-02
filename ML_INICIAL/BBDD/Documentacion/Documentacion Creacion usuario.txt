@@ -1,0 +1,18 @@
+
+Hemos generado este usuario con todos los permisos de acceso a BBDD.
+
+Para generar este usuario teneis que seguir estos pasos:
+	
+	1- Abrir MySQL e ir a la pestaña "Server".
+	2- Se abrirá un desplegable, allí escoger la opción "Users and privileges".
+	3- Clicar en el boton "Add Account".
+	4- En login name poner : whatthebeer.
+	5- En limit to hosts matching: eliminar el % o lo que haya y poned "localhost".
+	6- En password poned "whatthebeer1234%".
+	7- En la pestaña "Administrative Roles", dar todos los permisos.
+	8- Abajo, vereis "revert" y "apply", dadle a "apply".
+	9- Ya esta creado!!.
+	
+
+usuario bbdd: whatthebeer
+password bbdd : whatthebeer1234%

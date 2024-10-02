@@ -1,0 +1,5 @@
+Los nombres de los campos serán los mismos que los nombres de los campos del documento excel.
+
+Nombres de tablas también en inglés.
+
+Por el momento tenemos 4 tablas, la tabla correlación no esta creada.
