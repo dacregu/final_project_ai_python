@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<!--
+Hello Madafakas
+-->
+<html lang="es">
+    <head>
+        <title>WhatTheBeer</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-select.css" />
+        <link rel="stylesheet" type="text/css" href="css/myCSS.css" media="screen" />
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+
+        <script src="js/jquery-3.3.1.min.js" async></script>
+        <script src="js/popper.min.js" async></script>
+        <script src="js/bootstrap.min.js" async></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/bootstrap-select.js"></script>
+        <script src="js/myJQuery.js" async></script>
+
+<!--
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+-->
+
+    </head>
+    <body>
+        <header>
+            <nav class="navbar fixed-top navbar-black navbar-expand-sm">
+                <a href="#formulario" class="navbar-brand font-weight-bold open_div"><img src="img/logo_transparante.png" width="40" height="40" class="d-inline-block align-top" alt="">WhatTheBeer</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#barranav"
+                        aria-controls="navbarTogglerDemo01" aria-expand="false"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="barranav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link open_div" href="#formulario">Formulario</a></li>
+                        <li class="nav-item"><a class="nav-link open_div" href="#quienes_somos">¿Quiénes somos?</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main role="main">
+        <!-- FORMULARIO WEB-->
+            <div class="container formulario" id="formulario" style="background-color: white;">
+                <form class="col-10 offset-1" id="form">
+                    <div class="form-group row">
+                        <label for="staticCervezas" class="col-sm-3 col-form-label col-form-label-lg"><b>Cervezas</b></label>
+                        <div class="col-sm-9">
+                            <select class="selectpicker" multiple data-live-search="true" name="beers" id="beers">
+                            </select>
+                          <small id="lista_cervezas" class="form-text text-muted">Puede seleccionar hasta 5 cervezas.</small>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPuntuacion" class="col-sm-3 col-form-label col-form-label-lg"><b>Puntuación</b></label>
+                        <div class="col-sm-9 form-inline">
+                            <div class="col-12" id="div_punt_beer_1">
+                                <input type="range" class="custom-range col-9 custom-range" min="3" max="5" step="0.5" id="punt_beer_1">
+                                <span id="show_punt_beer_1" class="col-1">4</span>
+                            </div>
+                            <div class="col-12" id="div_punt_beer_2" style="display:none">
+                                <input type="range" class="custom-range col-9" min="3" max="5" step="0.5" id="punt_beer_2">
+                                <span id="show_punt_beer_2" class="col-1">4</span>
+                            </div>
+                            <div class="col-12" id="div_punt_beer_3" style="display:none">
+                                <input type="range" class="custom-range col-9" min="3" max="5" step="0.5" id="punt_beer_3">
+                                <span id="show_punt_beer_3" class="col-1">4</span>
+                            </div>
+                             <div class="col-12" id="div_punt_beer_4" style="display:none">
+                                <input type="range" class="custom-range col-9" min="3" max="5" step="0.5" id="punt_beer_4">
+                                <span id="show_punt_beer_4" class="col-1">4</span>
+                            </div>
+                            <div class="col-12" id="div_punt_beer_5" style="display:none">
+                                <input type="range" class="custom-range col-9" min="3" max="5" step="0.5" id="punt_beer_5">
+                                <span id="show_punt_beer_5" class="col-1">4</span>
+                            </div>
+                          <small id="puntuacion" class="col-12 form-text text-muted">La puntuación puede ir de 3 a 5.</small>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticEstilo" class="col-sm-3 col-form-label col-form-label-lg"><b>Estilo de cerveza</b></label>
+                        <div class="col-sm-9">
+                          <select class="selectpicker" data-live-search="true" name="estilo" id="estilo">
+                              <option selected style="display: none;" value="-1"></option>
+                            </select>
+                            <small id="estilo_cerveza" class="form-text text-muted">Seleccione un estilo de cerveza.</small>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="staticGraduacion" class="col-sm-3 col-form-label col-form-label-lg"><b>Graduación</b></label>
+                        <div class="col-sm-9">
+                            <div class="form-check form-check-inline col-sm-3 col-form-label-lg">
+                                <input class="form-check-input" type="radio" name="typeAbv" id="typeAbv1" value="mayor">
+                                <label class="form-check-label" for="inlineRadio1">Mayor</label>
+                            </div>
+                            <div class="form-check form-check-inline col-sm-3 col-form-label-lg">
+                                <input class="form-check-input" type="radio" name="typeAbv" id="typeAbv2" value="menor">
+                                <label class="form-check-label" for="inlineRadio2">Menor</label>
+                            </div>
+                            <div class="form-check form-check-inline col-sm-3 col-form-label-lg">
+                                <input class="form-check-input" type="radio" name="typeAbv" id="typeAbv3" value="entre">
+                                <label class="form-check-label" for="inlineRadio3">Entre</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label col-form-label-lg"></label>
+                        <div class="col-sm-9 form-inline">
+                            <div class="col-12" id="div_punt_abv_1">
+                                <input type="range" class="custom-range col-9" min="0" max="10" step="0.2" id="punt_abv_1">
+                                <span id="show_punt_abv_1" class="col-1">5</span>
+                            </div>
+                            <div class="col-12" id="div_punt_abv_2" style="display:none">
+                                <input type="range" class="custom-range col-9" min="2" max="15" step="0.2" id="punt_abv_2">
+                                <span id="show_punt_abv_2" class="col-1">8.6</span>
+                            </div>
+                          <small id="puntuacion" class="col-12 form-text text-muted">La graduación puede ir entre 0 y 10, en el caso de elegir la opción "entre" podrás elegir dos seleccionables.</small>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group row justify-content-center">
+                        <button type="button" class="btn btn-outline-secondary btn-lg" id="restart">Reiniciar</button>
+                        <button type="button" class="btn btn-outline-warning btn-anaranjado btn-lg" style='margin-left: 10px' id="enviar">Enviar</button>
+                    </div>
+                </form>
+        <!-- FIN FORMULARIO WEB -->                
+            </div>
+            <!-- CARGANDO-->
+            <div class="container cargando" id="cargando" style="display: none;">
+                <div class="d-flex justify-content-center">
+                    <!--<div class="spinner-grow text-white" style="width: 3rem; height: 3rem;" role="status" style="background-color: white;">
+                    <span class="sr-only">Loading...</span>-->
+                    <img src="img/beer.webp" width="240px" height="240px">
+                    </div>
+                </div>
+            </div>
+
+            <!-- FIN CARGANDO-->
+            <!-- TABLA RECOMENDACIONES-->
+            <div class="container tabla_recomendaciones" id="tabla_recomendaciones" style="display: none;">
+                <table class="table table-borderless">
+                  <thead>
+                    <tr>
+                      <th scope="col">Cerveza</th>
+                      <th scope="col">Estilo</th>
+                      <th scope="col">Graduación</th>
+                    </tr>
+                  </thead>
+                  <tbody id="insert_tabla_recomendaciones">
+                  </tbody>
+                </table>
+            </div>
+
+            <!-- FIN TABLA RECOMENDACIONES-->
+            <div class="container quienes_somos" id="quienes_somos" style="display: none;">
+                <h1 class="text-center"><b>¿Quiénes somos?</b></h1>
+                <div class="container">
+                    <div class="row">
+        <!--EVA-->
+                        <div class="col-lg-4">
+                            <div class="our-team-main">
+                                <div class="team-front">
+                                    <img src="http://placehold.it/110x110/9c27b0/fff?text=Dilip" class="img-fluid" />
+                                    <h3>Eva Armenteros</h3>
+                                    <p>Procesamiento de datos</p>
+                                </div>
+                                <div class="team-back">
+                                    <br>
+    	<span>
+    	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.
+    	</span><br>
+                                    <div align="center">
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="http://www.linkedin.com/in/eva-armalc">
+                                                    <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    	<!--FIN EVA-->
+    	<!--DANI-->
+                        <div class="col-lg-4">
+                            <div class="our-team-main">
+                                <div class="team-front">
+                                    <img src="http://placehold.it/110x110/336699/fff?text=Dilip" class="img-fluid" />
+                                    <h3>Daniel Crespo</h3>
+                                    <p>IA</p>
+                                </div>
+                                <div class="team-back">
+                                    <br>
+    	<span>
+    	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
+    	natoque penatibus et magnis dis parturient montes.
+    	</span><br>
+                                    <div align="center">
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="http://www.linkedin.com/in/dacregu">
+                                                    <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    	<!--FIN DANI-->
+    	<!--ALBERTO-->
+                        <div class="col-lg-4">
+                            <div class="our-team-main">
+                                <div class="team-front">
+                                    <img src="http://placehold.it/110x110/607d8b/fff?text=Dilip" class="img-fluid" />
+                                    <h3>Alberto Domingo</h3>
+                                    <p>Frontend</p>
+                                </div>
+                                <div class="team-back">
+                                    <br>
+    	<span>
+    	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
+    	natoque penatibus et magnis dis parturient montes.
+        </span><br>
+                                    <div align="center">
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="http://www.linkedin.com/in/alberto-domingo-rakosnik">
+                                                    <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    	<!--FIN ALBERTO-->
+    	<!--TONI-->
+                        <div class="col-lg-4">
+                            <div class="our-team-main">
+                                <div class="team-front">
+                                    <img src="http://placehold.it/110x110/4caf50/fff?text=Dilip" class="img-fluid" />
+                                    <h3>Toni Fàbrega</h3>
+                                    <p>Backend</p>
+                                </div>
+                                <div class="team-back">
+                                    <br>
+    	<span>
+    	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
+    	natoque penatibus et magnis dis parturient montes.
+        </span><br>
+                                    <div align="center">
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="http://www.linkedin.com/in/toni-f">
+                                                    <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    	<!--FIN TONI-->
+    	<!--DIEGO-->
+                        <div class="col-lg-4">
+                            <div class="our-team-main">
+                                <div class="team-front">
+                                    <img src="http://placehold.it/110x110/e91e63/fff?text=Dilip" class="img-fluid" />
+                                    <h3>Diego Queralt</h3>
+                                    <p>API</p>
+                                </div>
+                                <div class="team-back">
+                                    <br>
+    	<span>
+    	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
+    	natoque penatibus et magnis dis parturient montes.
+        </span><br>
+                                    <div align="center">
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="http://www.linkedin.com/in/diego-queralt">
+                                                    <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+    	                </div>
+                        </div>
+    	<!--FIN DIEGO-->
+    	<!--ADRI-->
+                        <div class="col-lg-4">
+                            <div class="our-team-main">
+                                <div class="team-front">
+                                    <img src="http://placehold.it/110x110/2196f3/fff?text=Dilip" class="img-fluid" />
+                                    <h3>Adrià Sánchez</h3>
+                                    <p>Base de datos</p>
+                                </div>
+                                <div class="team-back">
+                                    <br>
+    	<span>
+    	Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis 
+    	natoque penatibus et magnis dis parturient montes.
+        </span><br>
+                                    <div align="center">
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item">
+                                                <a class="social-icon text-xs-center" target="_blank" href="http://www.linkedin.com/in/adriasanchezalonso">
+                                                    <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    	<!--FIN ADRI-->
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+        </footer>
+    </body>
+</html>
